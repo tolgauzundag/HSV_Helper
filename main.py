@@ -17,7 +17,6 @@ locker = Event()
 class Main(QDialog):
     def __init__(self):
         super(Main, self).__init__()
-        print("sa")
         loadUi("ui.ui",self)
 
         self.selected_lower_hue = 0
@@ -149,9 +148,7 @@ class Main(QDialog):
                 self.updatemask()
                 self.updatehsvpalette()
                 locker.clear()
-                print("1")
             else:
-                print("2")
                 locker.wait()
 
     def updatemask(self):
@@ -237,7 +234,7 @@ if __name__ == "__main__":
     app.lastWindowClosed.connect(keep_alive)
     widget.setFixedWidth(1595)
     widget.setFixedHeight(900)
-    widget.setWindowTitle("Hsv Range Tool")
+    widget.setWindowTitle("HSV_Helper")
     #widget.setWindowIcon(QtGui.QIcon('logo.png'))
     widget.show()
     app.exec_()
